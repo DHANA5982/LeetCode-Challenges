@@ -1,8 +1,7 @@
 def merge_the_tools(string, k):
-    # your code goes here
     n = len(string)
     for i in range(int(n/k)):
-        a = (string[i*k: i*k+k])
+        a = string[i*k: i*k+k]
         first_occur = ''
         my_set = set()
         for j in a:
