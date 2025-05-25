@@ -1,2 +1,2 @@
-# HackerRank
+# LeetCode
 ## Exercises and solutions
