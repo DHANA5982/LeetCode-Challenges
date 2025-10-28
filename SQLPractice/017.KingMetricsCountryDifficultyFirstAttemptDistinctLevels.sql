@@ -21,11 +21,11 @@ attempt_upto AS (
     OR l.attempt_id <= fs.first_success_attempt
 ),
 per_player_stats AS (
-    SELECT a.player_id, a.level_id,
-    ROUND(AVG(CASE WHEN a.success = 'TRUE' THEN 1.0 ELSE 0.0 END), 2) AS success_rate,
-    ROUND(AVG(a.score), 2) as avg_score
-    FROM attempt_upto AS a
-    GROUP BY a.player_id, a.level_id
+    SELECT player_id, level_id,
+    ROUND(AVG(CASE WHEN success = 'TRUE' THEN 1.0 ELSE 0.0 END), 2) AS success_rate,
+    ROUND(AVG(score), 2) as avg_score
+    FROM attempt_upto
+    GROUP BY player_id, level_id
 ),
 eligible_players AS (
     SELECT player_id
